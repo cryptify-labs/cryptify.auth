@@ -1,7 +1,7 @@
 import React, { createContext, FC, useState } from 'react'
 import { useWeb3React, Web3ReactProvider } from '@web3-react/core'
 import { ExternalProvider, JsonRpcFetchFunc, Web3Provider } from '@ethersproject/providers'
-import { InjectedConnector } from '@web3-react/injected-connector'
+import { injected, walletconnect, coinbase } from '../connectors'
 
 export interface IWeb3Context {
     active: boolean,
@@ -15,10 +15,6 @@ export interface IWeb3Context {
     setIsCryptifyModalOpen: React.Dispatch<React.SetStateAction<boolean>> 
 }
 
-export const injectedConnector = new InjectedConnector({
-    supportedChainIds: [1, 2, 3, 4, 5, 137, 80001]
-})
-
 export const Web3Context = createContext<IWeb3Context | undefined>(undefined)
 
 export const Web3ContextProvider: FC = ({ children }) => {
@@ -30,10 +26,29 @@ export const Web3ContextProvider: FC = ({ children }) => {
         switch(walletType){
             case "metamask":
                 try {
-                    await activate(injectedConnector)
+                    await activate(injected)
                     return 
                 }
                 catch(err){
+                    return
+                }
+
+            case "walletconnect":
+                try {
+                    await activate(walletconnect)
+                    return
+                }
+                catch(err){
+                    return
+                }
+            
+            case "coinbase":
+                try {
+                    await activate(coinbase)
+                    return
+                }
+                catch(err){
+                    console.log(err)
                     return
                 }
 

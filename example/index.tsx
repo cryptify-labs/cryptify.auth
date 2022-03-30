@@ -9,7 +9,7 @@ const Test = () => {
   const { active, connectWallet, account, error } = useWeb3()
   
   useEffect(() => {
-    console.log(connectWallet)
+    console.log(error)
   })
 
   return(
