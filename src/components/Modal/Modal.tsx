@@ -18,7 +18,7 @@ export const Modal: FC<IWeb3Modal> =
                         )
                     })
                 }
-                <p>Powered by Cryptify</p>
+                <p className='text-center text-xs'>Powered by Cryptify</p>
             </div>
         </div>
     )
