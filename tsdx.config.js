@@ -1,12 +1,10 @@
-const postcss = require('rollup-plugin-postcss');
 const image = require('@rollup/plugin-image')
+const postcss = require('rollup-plugin-postcss');
 
 module.exports = {
   rollup(config, options) {
-    config.plugins.push(
-      image({
-        include: ['**/*.png', '**/*.svg']
-      }),
+    config.plugins = [(
+      image(),
       postcss({
         config: {
           path: './postcss.config.js',
@@ -16,8 +14,9 @@ module.exports = {
         inject: {
           insertAt: 'top',
         },
-      })
-    );
+      })),
+      ...config.plugins
+    ];
     return config;
   },
 };
