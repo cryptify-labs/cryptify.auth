@@ -11,7 +11,10 @@ export const ConnectButton = ({ children, wallets }: IButton) => {
     const { setIsCryptifyModalOpen, isCryptifyModalOpen } = useWeb3()
     return(
         <div>
-            <button onClick={() => setIsCryptifyModalOpen(true)}>
+            <button 
+                onClick={() => setIsCryptifyModalOpen(true)} 
+                className='bg-gray-200 px-4 py-2'
+            >
                 {children}
             </button>
             {
