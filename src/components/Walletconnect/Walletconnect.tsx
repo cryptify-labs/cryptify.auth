@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { useWeb3 } from '../../index'
 import '../../styles/tailwind.css'
 // @ts-ignore
@@ -13,6 +13,7 @@ interface IWalletconnect {
 }
 
 export const Walletconnect = ({ wallet }: IWalletconnect) => {    
+    
     const { connectWallet } = useWeb3()
 
     let src
@@ -29,10 +30,10 @@ export const Walletconnect = ({ wallet }: IWalletconnect) => {
         default: break            
     }
 
-    useEffect(() => console.log(wallet))
+    // useEffect(() => console.log(wallet))
     return(
         <div className='bg-gray-200'>
-            <button onClick={() => connectWallet(wallet)} className="px-4 py-2 flex items-center">
+            <button onClick={() => connectWallet(wallet)} className="px-4 py-2 flex items-center space-x-4">
                 <img src={src} alt="" className='h-8 '/>
                 <p>Connect {wallet}</p>
             </button>
