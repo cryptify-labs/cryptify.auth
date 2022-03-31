@@ -14,11 +14,26 @@ interface IWalletconnect {
 
 export const Walletconnect = ({ wallet }: IWalletconnect) => {    
     const { connectWallet } = useWeb3()
+
+    let src
+    switch(wallet){
+        case 'metamask':
+            src = metamask
+            break
+        case 'walletconnect':
+            src = walletconnect
+            break
+        case 'coinbase':
+            src = coinbase
+            break
+        default: break            
+    }
+
     useEffect(() => console.log(wallet))
     return(
         <div className='bg-gray-200'>
             <button onClick={() => connectWallet(wallet)} className="px-4 py-2 flex items-center">
-                <img src={walletconnect} alt="" className='h-8 '/>
+                <img src={src} alt="" className='h-8 '/>
                 <p>Connect {wallet}</p>
             </button>
         </div>
