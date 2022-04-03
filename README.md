@@ -71,4 +71,3 @@ const App = () => {
     </DappProvider>
   );
 };
-```
