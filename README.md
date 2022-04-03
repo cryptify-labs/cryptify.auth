@@ -41,3 +41,34 @@ const YourComponent = () => {
 }
 
 export default YourComponent
+
+
+### Example Code
+```
+// import { useWeb3, DappProvider, ConnectButton } from '@cryptify/auth'
+
+const Test = () => {
+
+  const { active, connectWallet, account, error } = useWeb3()
+  
+  useEffect(() => {
+    console.log(error)
+  })
+
+  return(
+    <div>
+      <ConnectButton>
+        Connect Wallet
+      </ConnectButton>
+    </div>
+  )
+}
+
+const App = () => {
+  return (
+    <DappProvider>
+      <Test />
+    </DappProvider>
+  );
+};
+```
