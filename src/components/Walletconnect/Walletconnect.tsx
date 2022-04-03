@@ -11,8 +11,8 @@ export const Walletconnect = ({ wallet }: IWalletconnect) => {
     
     const { connectWallet } = useWeb3()
     const metamask = 'https://ik.imagekit.io/7jwuvl98ti9/assets/metamask_img_Fc-xRB2APg.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648712582430'
-    const coinbase = 'https://ik.imagekit.io/7jwuvl98ti9/assets/walletconnect_img_HPJo-QByV.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648712582394'
-    const walletconnect = 'https://ik.imagekit.io/7jwuvl98ti9/assets/coinbase_img_Zdpk_5QWK.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648712582162'
+    const walletconnect = 'https://ik.imagekit.io/7jwuvl98ti9/assets/walletconnect_img_HPJo-QByV.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648712582394'
+    const coinbase = 'https://ik.imagekit.io/7jwuvl98ti9/assets/coinbase_img_Zdpk_5QWK.png?ik-sdk-version=javascript-1.4.3&updatedAt=1648712582162'
 
     let src
     switch(wallet){
