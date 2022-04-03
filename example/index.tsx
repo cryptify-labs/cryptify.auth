@@ -2,7 +2,7 @@ import 'react-app-polyfill/ie11';
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { useEffect } from 'react';
-import { useWeb3, DappProvider, ConnectButton } from '@cryptify/auth'
+import { useWeb3, DappProvider, ConnectButton } from '../src/index'
 
 const Test = () => {
 
