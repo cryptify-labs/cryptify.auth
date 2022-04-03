@@ -6,7 +6,7 @@ interface IWeb3Modal {
 }
 
 export const Modal: FC<IWeb3Modal> = 
-    ({ wallets = ['metamask', 'walletconnect', 'coinbase']}) =>
+    ({ wallets = ['metamask', 'coinbase', 'walletconnect']}) =>
 {
     return (
         <div className='bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center'>
@@ -15,9 +15,10 @@ export const Modal: FC<IWeb3Modal> =
                     wallets.map((wallet) => {
                         return(
                             <Walletconnect wallet={wallet} key={wallet}/>
-                        )
-                    })
-                }
+                            )
+                        })
+                    }
+                    <h1 className='text-center'>Connect Wallet</h1>
                 <p className='text-center text-xs'>Powered by Cryptify</p>
             </div>
         </div>
