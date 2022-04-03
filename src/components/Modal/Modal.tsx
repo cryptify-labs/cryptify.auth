@@ -11,6 +11,7 @@ export const Modal: FC<IWeb3Modal> =
     return (
         <div className='bg-black bg-opacity-50 absolute inset-0 flex justify-center items-center'>
             <div className='bg-gray-100 px-8 py-8 space-y-8'>
+                <h1 className='text-center'>Connect Wallet</h1>
                 {
                     wallets.map((wallet) => {
                         return(
@@ -18,7 +19,6 @@ export const Modal: FC<IWeb3Modal> =
                             )
                         })
                     }
-                    <h1 className='text-center'>Connect Wallet</h1>
                 <p className='text-center text-xs'>Powered by Cryptify</p>
             </div>
         </div>
